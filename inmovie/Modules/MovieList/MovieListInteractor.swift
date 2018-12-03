@@ -13,6 +13,24 @@ import Foundation
 import UIKit
 
 class MovieListInteractor: MovieListInteractorProtocol {
+
+    
+    /*
+     * Сервис загрузки бибилиотеки
+     */
+    var libraryService: LibraryServiceInterface!
+    
+    /**
+     Загрузка списка фильмов
+     
+     - Parameter genre:
+     */
+    func loadMovieList(genre: Int = 0) {
+        self.libraryService.loadMoviesList(genre: genre, completion: { [weak self] (moviesRecived) in
+            self?.presenter?.movieListDidRecive(movies: moviesRecived)
+        })
+    }
+    
     
     weak var presenter: MovieListPresenterProtocol!
     

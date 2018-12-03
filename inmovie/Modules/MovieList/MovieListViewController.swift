@@ -10,7 +10,10 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController, MovieListViewProtocol {
+class MovieListViewController: UITableViewController, MovieListViewProtocol {
+    
+    // Фильмы в списке
+    var sections: [FeaturedMoviesSectionCellModel]?
     
     var presenter: MovieListPresenterProtocol!
     let configurator: MovieListConfiguratorProtocol = MovieListConfigurator()
@@ -19,9 +22,52 @@ class MovieListViewController: UIViewController, MovieListViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Настраиваем Table View
+        //self.tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tableView.separatorStyle = .none
+        tableView.register(FeaturedMoviesSectionTableViewCell.self, forCellReuseIdentifier: "FeaturedMoviesSectionTableViewCellIdentifier")
         configurator.configure(with: self)
         presenter.configureView()
     }
     
+
     
+    
+}
+
+
+// Методы MovieListViewProtocol
+
+extension MovieListViewController {
+    
+    // Обновление списка фильмов
+    func updateMovieList(sections: [FeaturedMoviesSectionCellModel]) {
+        self.sections = sections
+    }
+}
+
+
+// MARK: - UITableVieControlle методы
+
+extension MovieListViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let movieSections = sections else {
+            return 0
+        }
+        return movieSections.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let movieSections = sections else {
+            return UITableViewCell()
+        }
+        let model = movieSections[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: indexPath) as! FeaturedMoviesSectionTableViewCell
+        cell.model = model
+        
+        return cell
+    }
 }

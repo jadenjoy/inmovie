@@ -21,5 +21,8 @@ class MovieListConfigurator: MovieListConfiguratorProtocol {
         viewController.presenter = presenter
         presenter.interactor = interactor
         presenter.router = router
+        
+        // Сервисы
+        interactor.libraryService = LibraryService()
     }
 }

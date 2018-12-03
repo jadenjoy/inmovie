@@ -11,14 +11,18 @@
 import Foundation
 
 protocol MovieListViewProtocol: class {
+    func updateMovieList(sections:[FeaturedMoviesSectionCellModel])
 }
 
 protocol MovieListPresenterProtocol: class {
     var router: MovieListRouterProtocol! { set get }
     func configureView()
+    func movieListDidRecive(movies: [FeaturedMoviesSection])
 }
 
 protocol MovieListInteractorProtocol: class {
+    
+    func loadMovieList(genre: Int)
 }
 
 protocol MovieListRouterProtocol: class {

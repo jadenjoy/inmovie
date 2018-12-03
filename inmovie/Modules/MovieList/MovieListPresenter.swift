@@ -11,6 +11,7 @@
 import Foundation
 
 class MovieListPresenter: MovieListPresenterProtocol {
+
     
     weak var view: MovieListViewProtocol!
     var interactor: MovieListInteractorProtocol!
@@ -20,10 +21,40 @@ class MovieListPresenter: MovieListPresenterProtocol {
         self.view = view
     }
     
-    // MARK: - MovieListPresenterProtocol methods
+    // MARK: - MovieListPresenterProtocol методы
     
     func configureView() {
-        
+        interactor.loadMovieList(genre: 878)
     }
+    
+    
+    /**
+     Метод отвечает за подготовку данных для вью после получения списка фильмов
+     
+     - Parameter movies: Массив фильмов полученных от сервера
+     */
+    func movieListDidRecive(movies: [FeaturedMoviesSection]) {
+        var sectionsCellModels: [FeaturedMoviesSectionCellModel] =  [FeaturedMoviesSectionCellModel]()
+        movies.forEach {
+            let sectionCelldModel = FeaturedMoviesSectionCellModel($0)
+            sectionCelldModel.delegate = self
+            sectionsCellModels.append(sectionCelldModel)
+        }
+        //print(moviesCellModels[0].overview)
+        view.updateMovieList(sections: sectionsCellModels)
+    }
+    
+    
+}
+
+// MARK: - MovieCellModelDelegate методы
+
+extension MovieListPresenter: FeaturedSectionModelDelegate {
+    
+    
+    func didTapMovieCell(withId: Int) {
+        print(withId)
+    }
+    
     
 }
