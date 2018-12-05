@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol LibraryServiceInterface {
+protocol LibraryServiceProtocol {
     func loadMoviesList(genre: Int, completion: @escaping ([FeaturedMoviesSection]) -> ())
+    func loadMovieInfo(withId id: Int, completion: @escaping (MovieInfoResultItem) -> ())
 }

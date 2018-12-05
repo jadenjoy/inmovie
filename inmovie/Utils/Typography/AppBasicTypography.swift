@@ -22,33 +22,33 @@ class AppTypography {
     static var titleFour: TypographyStyleable =
         AppTypographyStyleStruct(name: "SFProDisplay-Bold", size: 20, color: #colorLiteral(red: 0.2431372549, green: 0.2588235294, blue: 0.3098039216, alpha: 1), kern: -0.5)
     
-    static var subTitle: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 14, color: #colorLiteral(red: 0.2431372549, green: 0.2588235294, blue: 0.3098039216, alpha: 1), kern: 0)
+    static var sectionHeader: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Bold", size: 18, color: #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1), kern: -0.45)
+
+    static var movieCoverTitle: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Medium", size: 13, color: #colorLiteral(red: 0.2, green: 0.1921568627, blue: 0.1921568627, alpha: 1), kern: 0.35)
     
-    static var heavyHeadline: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Heavy", size: 13, color: #colorLiteral(red: 0.2431372549, green: 0.2588235294, blue: 0.3098039216, alpha: 1), kern: 0)
+    static var movieCoverCategory: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Medium", size: 13, color: #colorLiteral(red: 0.5176470588, green: 0.5176470588, blue: 0.5176470588, alpha: 1), kern: 0.35)
     
-    static var heavyHeadlineSectionHeader: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Heavy", size: 13, color: #colorLiteral(red: 0.8352941176, green: 0.8392156863, blue: 0.8470588235, alpha: 1), kern: -0.5)
+    static var movieCoverRating: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Bold", size: 17, color: #colorLiteral(red: 0.9411764706, green: 0.4745098039, blue: 0.05490196078, alpha: 1), kern: 0.54)
     
-    static var subHead: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 15, color: #colorLiteral(red: 0.7176470588, green: 0.7176470588, blue: 0.7176470588, alpha: 1), kern: 0)
+    static var movieInfoTitle: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 26, color: #colorLiteral(red: 0.2, green: 0.2, blue: 0.2, alpha: 1), kern: -0.7)
     
-    static var coverTitle: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 22, color: #colorLiteral(red: 0.2431372549, green: 0.2588235294, blue: 0.3098039216, alpha: 1), kern: 0.4)
+    static var movieOriginalTitle: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Medium", size: 14, color: #colorLiteral(red: 0.5176470588, green: 0.5176470588, blue: 0.5176470588, alpha: 1), kern: 0.38)
+  
+    static var movieInfoRating: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 26, color: #colorLiteral(red: 1, green: 0.4196078431, blue: 0.03137254902, alpha: 1), kern: -0.7)
     
-    static var coverCategory: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 18, color: #colorLiteral(red: 0.7411764706, green: 0.7450980392, blue: 0.7529411765, alpha: 1), kern: 0.4)
+    static var orangeButtonTitle: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Medium", size: 15, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), kern: -0.38)
     
-    static var descriptionTitle: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Semibold", size: 18, color: #colorLiteral(red: 0.2431372549, green: 0.2588235294, blue: 0.3098039216, alpha: 1), kern: 0.4)
+    static var genreButtonTitle: TypographyStyleable =
+        AppTypographyStyleStruct(name: "SFProDisplay-Medium", size: 12, color: #colorLiteral(red: 0.5176470588, green: 0.5176470588, blue: 0.5176470588, alpha: 1), kern: 0.32)
     
     static var basicText: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProText-Regular", size: 15, color: #colorLiteral(red: 0.7411764706, green: 0.7450980392, blue: 0.7529411765, alpha: 1), kern: -0.1)
-    
-    static var separatorSmall: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Heavy", size: 14, color: #colorLiteral(red: 1, green: 0.3960784314, blue: 0.3882352941, alpha: 1), kern: -0.32)
-    
-    static var editorTemplateName: TypographyStyleable =
-        AppTypographyStyleStruct(name: "SFProDisplay-Bold", size: 36, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), kern: -0.82)
+        AppTypographyStyleStruct(name: "SFProText-Regular", size: 14, color: #colorLiteral(red: 0.368627451, green: 0.368627451, blue: 0.368627451, alpha: 1), kern: -0.05)
 }

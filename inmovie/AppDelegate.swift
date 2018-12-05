@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        //window?.rootViewController = FeaturedTemplatesViewController()
-        window?.rootViewController = MovieListViewController()
+        let controller = MovieInfoViewController()
+        window?.rootViewController = controller
         return true
     }
 

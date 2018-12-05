@@ -12,10 +12,10 @@ import UIKit
 protocol MovieTableViewCellProtocol {
    func setMovieImage(image: UIImage)
     func setMovieTitle(title: String)
-    func setMovieDuration(duration: String)
+    
     func setMovieCategory(category: String)
     func setMovieRaiting(rating: String)
-    func setMovieVoteCount(votes: Int)
+
     
     
 }

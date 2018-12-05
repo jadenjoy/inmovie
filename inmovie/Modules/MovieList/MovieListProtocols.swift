@@ -21,7 +21,6 @@ protocol MovieListPresenterProtocol: class {
 }
 
 protocol MovieListInteractorProtocol: class {
-    
     func loadMovieList(genre: Int)
 }
 

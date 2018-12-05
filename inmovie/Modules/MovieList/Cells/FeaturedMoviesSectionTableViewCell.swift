@@ -28,7 +28,6 @@ class FeaturedMoviesSectionTableViewCell: UITableViewCell, ModelRepresentable {
             return
         }
         setSectionTitle(title: model.title)
-        setSectionAnnotation(annotation: model.countTitle)
         featuredTemplatesCoversCollection.reloadData()
         
     }
@@ -96,7 +95,7 @@ extension FeaturedMoviesSectionTableViewCell {
     
     func setupViews()  {
         self.addSubview(sectionHeader)
-        self.addSubview(sectionAnnotation)
+        
         self.addSubview(featuredTemplatesCoversCollection)
         featuredTemplatesCoversCollection.delegate = self
         featuredTemplatesCoversCollection.dataSource = self
@@ -118,20 +117,17 @@ extension FeaturedMoviesSectionTableViewCell {
         NSLayoutConstraint(item: self.sectionHeader, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 20).isActive = true
         NSLayoutConstraint(item: self.sectionHeader, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
         
-        
-        // Расширение
-        self.sectionAnnotation.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: self.sectionAnnotation, attribute: .left, relatedBy: .equal, toItem: self.sectionHeader, attribute: .right, multiplier: 1.0, constant: 4).isActive = true
-        NSLayoutConstraint(item: self.sectionAnnotation, attribute: .centerY, relatedBy: .equal, toItem: self.sectionHeader, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.sectionAnnotation, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100).isActive = true
 
         
         // Коллекция шаблонов
         self.featuredTemplatesCoversCollection.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(item: self.featuredTemplatesCoversCollection, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
         NSLayoutConstraint(item: self.featuredTemplatesCoversCollection, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.featuredTemplatesCoversCollection, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 323).isActive = true
+        NSLayoutConstraint(item: self.featuredTemplatesCoversCollection, attribute: .top, relatedBy: .equal, toItem: self.sectionHeader, attribute: .bottom, multiplier: 1.0, constant: 15).isActive = true
+        NSLayoutConstraint(item: self.featuredTemplatesCoversCollection, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 260).isActive = true
         NSLayoutConstraint(item: self.featuredTemplatesCoversCollection, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: -30).isActive = true
+        
+        
     }
 }
 
@@ -147,12 +143,12 @@ extension FeaturedMoviesSectionTableViewCell: FeaturedMoviesSectionTableViewCell
     
     // Установка значения заголовка секции
     func setSectionTitle(title sectionHeaderLabelText: String)  {
-        sectionHeader.attributedText = TPAttributedString(string: sectionHeaderLabelText, for: AppTypography.titleOne).makeString()
+        sectionHeader.attributedText = TPAttributedString(string: sectionHeaderLabelText, for: AppTypography.sectionHeader).makeString()
     }
     
     // Установка значения аннотации секции
     func setSectionAnnotation(annotation sectionAnnotationlText: String)  {
-        sectionAnnotation.attributedText = TPAttributedString(string: sectionAnnotationlText, for: AppTypography.heavyHeadline, ofColor: AppTypography.heavyHeadlineSectionHeader.color).makeString()
+        sectionAnnotation.attributedText = TPAttributedString(string: sectionAnnotationlText, for: AppTypography.movieCoverRating, ofColor: AppTypography.movieCoverRating.color).makeString()
         
     }
     
@@ -164,7 +160,7 @@ extension FeaturedMoviesSectionTableViewCell: FeaturedMoviesSectionTableViewCell
  */
 extension FeaturedMoviesSectionTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 145, height: 323)
+        return CGSize(width: 140, height: 260)
     }
 }
 

@@ -18,7 +18,7 @@ class MovieListInteractor: MovieListInteractorProtocol {
     /*
      * Сервис загрузки бибилиотеки
      */
-    var libraryService: LibraryServiceInterface!
+    var libraryService: LibraryServiceProtocol!
     
     /**
      Загрузка списка фильмов
