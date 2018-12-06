@@ -28,6 +28,7 @@ class MovieInfoShortInfoCell:  MovieInfoBaseCell {
     
     let movieTitle: UILabel = {
         let movieTitleLabel = UILabel()
+        movieTitleLabel.numberOfLines = 2
         return movieTitleLabel
     }()
     
@@ -218,7 +219,7 @@ extension MovieInfoShortInfoCell {
         // Название
         self.movieTitle.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(item: self.movieTitle, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 20).isActive = true
-        NSLayoutConstraint(item: self.movieTitle, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 333).isActive = true
+        NSLayoutConstraint(item: self.movieTitle, attribute: .width, relatedBy: .lessThanOrEqual, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 315).isActive = true
         NSLayoutConstraint(item: self.movieTitle, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 15).isActive = true
         
         // Название на языке оригинала

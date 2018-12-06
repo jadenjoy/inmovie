@@ -94,6 +94,7 @@ class FeaturedMoviesSectionTableViewCell: UITableViewCell, ModelRepresentable {
 extension FeaturedMoviesSectionTableViewCell {
     
     func setupViews()  {
+        
         self.addSubview(sectionHeader)
         
         self.addSubview(featuredTemplatesCoversCollection)
