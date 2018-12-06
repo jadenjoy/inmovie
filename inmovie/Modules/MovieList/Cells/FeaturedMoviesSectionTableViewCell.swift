@@ -100,6 +100,7 @@ extension FeaturedMoviesSectionTableViewCell {
         self.addSubview(featuredTemplatesCoversCollection)
         featuredTemplatesCoversCollection.delegate = self
         featuredTemplatesCoversCollection.dataSource = self
+        featuredTemplatesCoversCollection.showsHorizontalScrollIndicator = false
         setupConstraints()
     }
 }
