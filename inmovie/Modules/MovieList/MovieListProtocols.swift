@@ -25,6 +25,7 @@ protocol MovieListInteractorProtocol: class {
 }
 
 protocol MovieListRouterProtocol: class {
+    func showMovieInfo(id: Int)
 }
 
 protocol MovieListConfiguratorProtocol: class {

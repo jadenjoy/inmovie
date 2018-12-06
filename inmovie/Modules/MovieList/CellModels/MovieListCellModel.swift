@@ -17,8 +17,8 @@ class MovieListCellModel: BaseCellModel {
         return "MovieListCellModelIdenttifier"
     }
     
-    var adult: Bool
-    var backdrop_path: String
+    var adult: Bool?
+    var backdrop_path: String?
     var genre_ids: [Int]?
     var id: Int
     var original_language: String
@@ -52,6 +52,7 @@ class MovieListCellModel: BaseCellModel {
         self.vote_average = movie.vote_average
         self.vote_count = movie.vote_count
         self.selected = false
+        self.action = action
         super.init()
         
 

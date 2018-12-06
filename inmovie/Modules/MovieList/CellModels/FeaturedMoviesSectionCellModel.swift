@@ -40,10 +40,10 @@ class FeaturedMoviesSectionCellModel: BaseCellModel {
         self.moviesModels = [MovieListCellModel]()
         moviesForModels.forEach({
             let model = $0 as MovieResultItem
-            let template = MovieListCellModel($0) { [weak self] in
+            let movie = MovieListCellModel($0) { [weak self] in
                 self?.delegate?.didTapMovieCell(withId: model.id)
             }
-            self.moviesModels?.append(template)
+            self.moviesModels?.append(movie)
         })
     }
 }

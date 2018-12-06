@@ -193,7 +193,21 @@ extension FeaturedMoviesSectionTableViewCell: UICollectionViewDataSource {
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Загрузили модель?
+        guard let model = model as? FeaturedMoviesSectionCellModel else {
+            return
+        }
+        // Фильмы есть?
+        guard let models = model.moviesModels else {
+            return
+        }
+        let cellModel = models[indexPath.row]
+            cellModel.action?()
+        }
     
-}
+    }
+    
+
 
 

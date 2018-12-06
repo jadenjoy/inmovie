@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol MovieInfoTopCoverCellProtocol {
-    func setMovieImage(image: UIImage)
+    func setMovieImage(url: URL)
 }
 
 class MovieInfoTopCoverCell:  MovieInfoBaseCell  {
@@ -44,8 +44,8 @@ class MovieInfoTopCoverCell:  MovieInfoBaseCell  {
         guard let model = model as? MovieTopCoverCellModel else {
             return
         }
-        
-        setMovieImage(image: UIImage(named: "cover" + String(Int.random(in: 1 ... 10))) ?? #imageLiteral(resourceName: "Template 2"))
+        setMovieImage(url: URL(string: "https://image.tmdb.org/t/p/w500" + model.poster_path)!)
+        //setMovieImage(image: UIImage(named: "cover" + String(Int.random(in: 1 ... 10))) ?? #imageLiteral(resourceName: "Template 2"))
         
     }
     
@@ -117,8 +117,8 @@ extension MovieInfoTopCoverCell: MovieInfoTopCoverCellProtocol {
      
      - Parameter image: Обложка фильма
      */
-    func setMovieImage(image: UIImage) {
-        movieImage.image = image
+    func setMovieImage(url: URL) {
+        movieImage.load(url: url)
     }
     
  

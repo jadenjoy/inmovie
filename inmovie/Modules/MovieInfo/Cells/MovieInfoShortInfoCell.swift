@@ -162,7 +162,7 @@ class MovieInfoShortInfoCell:  MovieInfoBaseCell {
             return
         }
         setMovieTitle(title: model.title)
-        setMovieOriginalTitle(title: model.original_title)
+        setMovieOriginalTitle(title: model.original_title ?? "")
         setMovieIMDBRating(rating: model.vote_average)
         setMovieRating(rating: model.vote_average)
         setButtonTitle(title: "Оценить")

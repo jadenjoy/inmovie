@@ -12,11 +12,19 @@ import Foundation
 import UIKit
 
 class MovieListRouter: MovieListRouterProtocol {
+
+    
     
     weak var viewController: MovieListViewController!
     
     init(viewController: MovieListViewController) {
         self.viewController = viewController
+    }
+    
+    func showMovieInfo(id: Int)  {
+        let nextViewController = MovieInfoViewController()
+        nextViewController.id = id
+        viewController.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
 }

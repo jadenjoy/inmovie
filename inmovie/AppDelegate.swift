@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let controller = MovieInfoViewController()
-        window?.rootViewController = controller
+        let controller = MovieListViewController()
+        let  navController = UINavigationController(rootViewController: controller)
+        navController.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.4196078431, blue: 0.03137254902, alpha: 1)
+        window?.rootViewController = navController
         return true
     }
 

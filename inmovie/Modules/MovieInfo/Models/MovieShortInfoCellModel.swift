@@ -16,7 +16,7 @@ class MovieShortInfoCellModel: BaseCellModel {
     }
     
     var title: String
-    var original_title: String
+    var original_title: String?
     var genres: [MovieGenre]
     var vote_average: Float
     var imdb_vote_average: Float

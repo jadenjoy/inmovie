@@ -11,11 +11,13 @@
 import Foundation
 
 protocol MovieInfoViewProtocol: class {
+    var id: Int {set get}
     func updateView(info: MovieInfoModel)
 }
 
 protocol MovieInfoPresenterProtocol: class {
     var router: MovieInfoRouterProtocol! { set get }
+
     func configureView()
     func movieInfoDidRecive(info: MovieInfoResultItem)
 }

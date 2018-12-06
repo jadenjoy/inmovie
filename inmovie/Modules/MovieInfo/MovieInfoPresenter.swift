@@ -12,6 +12,7 @@ import Foundation
 
 class MovieInfoPresenter: MovieInfoPresenterProtocol {
     
+    
     weak var view: MovieInfoViewProtocol!
     var interactor: MovieInfoInteractorProtocol!
     var router: MovieInfoRouterProtocol!
@@ -23,8 +24,10 @@ class MovieInfoPresenter: MovieInfoPresenterProtocol {
     // MARK: - MovieInfoPresenterProtocol methods
     
     func configureView() {
-        interactor.loadMovieInfo(withId: 3)
+        interactor.loadMovieInfo(withId: view.id)
     }
+    
+    
     
     
     /**

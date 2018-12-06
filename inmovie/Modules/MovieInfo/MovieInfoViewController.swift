@@ -17,21 +17,30 @@ class MovieInfoViewController: UITableViewController, MovieInfoViewProtocol {
     let configurator: MovieInfoConfiguratorProtocol = MovieInfoConfigurator()
     
     var movieInfo: MovieInfoModel?
+    var id: Int = 0
     
     // MARK: - Lifecycle methods
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: -45, left: 0, bottom: 0, right: 0)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        
+        tableView.contentInset = UIEdgeInsets(top: ((navigationController?.navigationBar.frame.size.height  ?? 0) * -1) - UIApplication.shared.statusBarFrame.height, left: 0, bottom: 0, right: 0)
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
         tableView.register(MovieInfoTopCoverCell.self, forCellReuseIdentifier: "MovieTopCoverCellIdenttifier")
         tableView.register(MovieInfoShortInfoCell.self, forCellReuseIdentifier: "MovieShortInfoCelldenttifier")
         tableView.register(MovieInfoOverviewCell.self, forCellReuseIdentifier: "MovieOverviewCelldenttifier")
+
         configurator.configure(with: self)
         presenter.configureView()
     }
+    
     
     
     
@@ -46,7 +55,7 @@ extension MovieInfoViewController {
     func updateView(info: MovieInfoModel) {
 
         self.movieInfo = info
-        
+        tableView.reloadData()
     }
 }
 

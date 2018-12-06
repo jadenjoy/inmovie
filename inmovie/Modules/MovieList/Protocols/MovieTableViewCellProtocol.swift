@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol MovieTableViewCellProtocol {
-   func setMovieImage(image: UIImage)
+    func setMovieImage(url: URL)
     func setMovieTitle(title: String)
     
     func setMovieCategory(category: String)

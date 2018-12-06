@@ -24,9 +24,16 @@ import Foundation
 //vote_average: 6.5
 //vote_count: 2424
 
-struct MovieResultItem {
-    var adult: Bool
-    var backdrop_path: String
+struct MovieListResultItem: Codable {
+    var page: Int
+    var results: [MovieResultItem]
+    var total_pages: Int
+    var total_results: Int
+}
+
+struct MovieResultItem: Codable {
+    var adult: Bool?
+    var backdrop_path: String?
     var genre_ids: [Int]?
     var id: Int
     var original_language: String

@@ -28,6 +28,7 @@ class MovieListViewController: UITableViewController, MovieListViewProtocol {
         self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.separatorStyle = .none
         tableView.register(FeaturedMoviesSectionTableViewCell.self, forCellReuseIdentifier: "FeaturedMoviesSectionTableViewCellIdentifier")
+        navigationController?.setNavigationBarHidden(true, animated: false)
         configurator.configure(with: self)
         presenter.configureView()
     }
@@ -45,6 +46,7 @@ extension MovieListViewController {
     // Обновление списка фильмов
     func updateMovieList(sections: [FeaturedMoviesSectionCellModel]) {
         self.sections = sections
+        tableView.reloadData()
     }
 }
 

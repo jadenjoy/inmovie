@@ -25,6 +25,7 @@ class FeaturesMovieCardCollectionViewCell: UICollectionViewCell, ModelRepresenta
 
     var movieImage: UIImageView = {
         let movieImageImageView = UIImageView()
+        movieImageImageView.backgroundColor = #colorLiteral(red: 0.8633803934, green: 0.8633803934, blue: 0.8633803934, alpha: 1)
         movieImageImageView.contentMode = .scaleAspectFill
         movieImageImageView.layer.cornerRadius = 10
         movieImageImageView.clipsToBounds = true
@@ -104,7 +105,9 @@ class FeaturesMovieCardCollectionViewCell: UICollectionViewCell, ModelRepresenta
             
             return
         }
-        setMovieImage(image: UIImage(named: "cover" + String(Int.random(in: 1 ... 10))) ?? #imageLiteral(resourceName: "Template 2"))
+        //setMovieImage(image: UIImage(named: "cover" + String(Int.random(in: 1 ... 10))) ?? #imageLiteral(resourceName: "Template 2"))
+        
+        setMovieImage(url: URL(string: "https://image.tmdb.org/t/p/w200" + model.poster_path)!)
         setMovieTitle(title: model.title)
         setMovieCategory(category: "2018, Фантастика")
         setMovieRaiting(rating: String(model.vote_average))
@@ -134,8 +137,8 @@ extension FeaturesMovieCardCollectionViewCell {
     
     func setupViews()  {
         //self.backgroundColor = UIColor.red
-        self.addSubview(self.movieImage)
         self.addSubview(self.shadowContainer)
+        self.addSubview(self.movieImage)
         self.addSubview(self.movieTitle)
         self.addSubview(self.movieCategory)
         self.addSubview(self.starIcon)
@@ -209,8 +212,8 @@ extension FeaturesMovieCardCollectionViewCell: MovieTableViewCellProtocol {
      
      - Parameter image: Обложка фильма
      */
-    func setMovieImage(image: UIImage) {
-        movieImage.image = image
+    func setMovieImage(url: URL) {
+        movieImage.load(url: url)
     }
     
     

@@ -24,7 +24,7 @@ class MovieListPresenter: MovieListPresenterProtocol {
     // MARK: - MovieListPresenterProtocol методы
     
     func configureView() {
-        interactor.loadMovieList(genre: 878)
+        interactor.loadMovieList(genre: 0)
     }
     
     
@@ -53,7 +53,7 @@ extension MovieListPresenter: FeaturedSectionModelDelegate {
     
     
     func didTapMovieCell(withId: Int) {
-        print(withId)
+        router.showMovieInfo(id: withId)
     }
     
     
