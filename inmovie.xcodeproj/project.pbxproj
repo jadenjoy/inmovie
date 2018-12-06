@@ -58,6 +58,8 @@
 		B5BE300221B8303F005E7439 /* MovieInfoShortInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE300121B8303F005E7439 /* MovieInfoShortInfoCell.swift */; };
 		B5BE300421B89068005E7439 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B5BE300321B89044005E7439 /* SF-Pro-Text-Regular.otf */; };
 		B5BE300821B8CE72005E7439 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE300721B8CE72005E7439 /* UIImageView.swift */; };
+		B5BE300C21B8DD43005E7439 /* Screen cover@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BE300A21B8DD42005E7439 /* Screen cover@1x.png */; };
+		B5BE300D21B8DD43005E7439 /* iPhone X@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5BE300B21B8DD42005E7439 /* iPhone X@1x.png */; };
 		D166025CDFC24BD2FAEFBF3A /* Pods_inmovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4F9464544FCBB9D087C122 /* Pods_inmovieUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,8 @@
 		B5BE300121B8303F005E7439 /* MovieInfoShortInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoShortInfoCell.swift; sourceTree = "<group>"; };
 		B5BE300321B89044005E7439 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		B5BE300721B8CE72005E7439 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		B5BE300A21B8DD42005E7439 /* Screen cover@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen cover@1x.png"; sourceTree = "<group>"; };
+		B5BE300B21B8DD42005E7439 /* iPhone X@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone X@1x.png"; sourceTree = "<group>"; };
 		B65B247BB05D266386D9E552 /* Pods-inmovieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-inmovieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-inmovieTests/Pods-inmovieTests.release.xcconfig"; sourceTree = "<group>"; };
 		CCB62EF3ACFC64ED5677215D /* Pods_inmovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inmovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89C8ABD5C03472D0D0C8F9C /* Pods_inmovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_inmovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +225,7 @@
 		B56EEF3B21ADBA3E004336A0 /* inmovie */ = {
 			isa = PBXGroup;
 			children = (
+				B5BE300921B8DC46005E7439 /* Design Renders */,
 				B5BE2FCE21B1D37C005E7439 /* Utils */,
 				B5BE2FBC21AF18A0005E7439 /* BaseCellModel */,
 				B56EEF7621ADC255004336A0 /* Services */,
@@ -419,6 +424,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		B5BE300921B8DC46005E7439 /* Design Renders */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE300B21B8DD42005E7439 /* iPhone X@1x.png */,
+				B5BE300A21B8DD42005E7439 /* Screen cover@1x.png */,
+			);
+			path = "Design Renders";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -527,12 +541,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BE300D21B8DD43005E7439 /* iPhone X@1x.png in Resources */,
 				B5BE300421B89068005E7439 /* SF-Pro-Text-Regular.otf in Resources */,
 				B5BE2FDD21B5B932005E7439 /* SF-Pro-Display-Bold.otf in Resources */,
 				B5BE2FDE21B5B932005E7439 /* SF-Pro-Display-Medium.otf in Resources */,
 				B5BE2FDF21B5B932005E7439 /* SF-Pro-Display-Semibold.otf in Resources */,
 				B56EEF4A21ADBA40004336A0 /* LaunchScreen.storyboard in Resources */,
 				B56EEF4721ADBA40004336A0 /* Assets.xcassets in Resources */,
+				B5BE300C21B8DD43005E7439 /* Screen cover@1x.png in Resources */,
 				B56EEF4221ADBA3E004336A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
